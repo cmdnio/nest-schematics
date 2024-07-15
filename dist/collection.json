@@ -1,0 +1,10 @@
+{
+  "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "crud": {
+      "description": "Create a Nest CRUD resource.",
+      "factory": "./schematics/crud/crud.factory#main",
+      "schema": "./schematics/crud/schema.json"
+    }
+  }
+}

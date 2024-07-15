@@ -1,0 +1,51 @@
+{
+  "name": "nest-cmdn-schematics",
+  "version": "0.0.1",
+  "description": "Opinionated NestJS Schematics. Uses Prisma, Zod validations, and REST controllers.",
+  "scripts": {
+    "postbuild": "npm run copy:collection && npm run copy:schematics",
+    "build": "rm -rf dist && tsc",
+    "copy:collection": "cpx src/collection.json dist && cpx 'src/schematics/**/schema.json' dist/schematics",
+    "copy:schematics": "cpx 'src/schematics/**/files/**/*.*' dist/schematics && cpx 'src/schematics/**/files/**/.*' dist/schematics && cpx 'src/schematics/**/files/**/.*/**' dist/schematics",
+    "clean": "gulp clean:src",
+    "lint": "eslint '{src,test}/**/*.ts' --fix",
+    "prepublish:npm": "npm run build",
+    "publish:npm": "npm publish --access public",
+    "test": "npm run clean && NODE_ENV=test jest -w 1 --no-cache --config jest.json",
+    "test:dev": "NODE_ENV=test npm run -s test -- --watchAll"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cmdnio/nest-schematics"
+  },
+  "keywords": [
+    "NestJS",
+    "Schematics",
+    "Typescript",
+    "Prisma",
+    "Zod",
+    "Rest"
+  ],
+  "author": "CMDN",
+  "license": "MIT",
+  "schematics": "./dist/collection.json",
+  "dependencies": {
+    "@angular-devkit/core": "^18.1.0",
+    "@angular-devkit/schematics": "^18.1.0",
+    "comment-json": "^4.2.3",
+    "jsonc-parser": "^3.3.1",
+    "pluralize": "^8.0.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/node": "^18.18.0",
+    "@types/pluralize": "^0.0.33",
+    "cpx": "^1.5.0",
+    "gulp": "^5.0.0",
+    "gulp-clean": "^0.4.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.2",
+    "ts-node": "^10.9.2",
+    "typescript": "~5.5.2"
+  }
+}

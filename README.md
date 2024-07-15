@@ -16,5 +16,5 @@ npm i -g nest-cmdn-schematics
 # Usage
 
 ```bash
-nest g -c @nest-cmdn-schematics crud <Resource Name>
+nest g -c nest-cmdn-schematics crud <Resource Name>
 ```

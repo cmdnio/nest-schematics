@@ -1,6 +1,6 @@
 {
   "name": "nest-cmdn-schematics",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Opinionated NestJS Schematics. Uses Prisma, Zod validations, and REST controllers.",
   "scripts": {
     "postbuild": "npm run copy:collection && npm run copy:schematics",

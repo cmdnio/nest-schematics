@@ -10,7 +10,7 @@ This package generates opinionated NestJS REST API resources. Key takeaways:
 ## Installation
 
 ```bash
-npm i -g nest-cmdn-schematics
+npm i --save-dev nest-cmdn-schematics
 ```
 
 # Usage

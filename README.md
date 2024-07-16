@@ -18,3 +18,17 @@ npm i --save-dev nest-cmdn-schematics
 ```bash
 nest g -c nest-cmdn-schematics crud <Resource Name>
 ```
+
+Or add npm alias
+
+```json
+  "scripts": {
+    "gen": "nest g crud -c nest-cmdn-schematics"
+  }
+```
+
+And then use
+
+```bash
+npm run gen <Resource Name>
+```
